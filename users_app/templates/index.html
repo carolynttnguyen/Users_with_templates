@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>single model orm</title>
+</head>
+
+<body>
+    <div <h1>List of Users</h1>
+
+        <table>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Age</th>
+            </tr>
+
+            {% for user in all_users %}
+            <tr>
+                <td> {{user.first_name}} </td>
+                <td> {{user.last_name}} </td>
+                <td>{{user.email}}</td>
+                <td>{{user.age}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div>
+        <h1>Add a User</h1>
+
+        <form action="user_input" method="post">
+            {% csrf_token %}
+            <label for="first_name">First name:</label>
+            <input name="first_name" type="text">
+
+            <label for="last_name">Last name:</label>
+            <input name="last_name" type="text"><br>
+
+            <label for="email">Email:</label>
+            <input name="email" type="text">
+
+            
+            <label for="age">Age:</label>
+            <input name="age" type="number"><br>
+
+
+         <button class="btn btn-primary">Submit</button>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
