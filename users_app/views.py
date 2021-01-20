@@ -7,7 +7,7 @@ def index(request):
     }
     return render(request, "index.html", context)
 
-def user_input(request):
+def add_user(request):
     users.objects.create(
         first_name=request.POST['first_name'],
         last_name=request.POST['last_name'],
